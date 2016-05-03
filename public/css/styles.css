@@ -1,0 +1,218 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  position: fixed;
+  background-color: #ffedc8;
+  border: solid 10px gold;
+  height: 98.3%;
+  width: 98%; }
+  body #header {
+    position: relative; }
+    body #header #title {
+      border-bottom: solid 10px black;
+      position: fixed;
+      margin: 1%;
+      left: 47%;
+      top: 2%;
+      font-size: 5vh; }
+    body #header #subTitle {
+      position: absolute;
+      margin: 1%;
+      left: 50%;
+      top: 70%;
+      font-size: 3vh; }
+  body #depositFields {
+    position: fixed;
+    margin-top: -35%;
+    margin-left: 40%; }
+    body #depositFields #depositValue {
+      position: fixed;
+      margin-left: 10%;
+      font-size: 2vh; }
+  body #infoBox {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    background-color: #ffffff;
+    border: solid 5px red;
+    margin: 10%;
+    margin-top: 30%;
+    font-size: 3vh; }
+  body #input {
+    position: relative;
+    top: 1%;
+    padding: 1%; }
+    body #input #withdraw {
+      position: absolute;
+      top: -120%;
+      font-size: 2.5vh; }
+    body #input #deposit {
+      position: absolute;
+      top: -60%;
+      font-size: 2.5vh; }
+    body #input input[type=radio] {
+      width: 5vw;
+      height: 5vh; }
+    body #input #transfer {
+      position: absolute;
+      top: -60%;
+      font-size: 2.5vh;
+      margin-left: -90%; }
+    body #input #cancel {
+      position: absolute;
+      top: -120%;
+      font-size: 2.5vh;
+      margin-left: -90%; }
+    body #input #button2 {
+      margin-left: 35%;
+      margin-right: 25%;
+      font-size: 4vh; }
+    body #input #button {
+      margin-left: 35%;
+      margin-right: 25%;
+      font-size: 4vh; }
+      body #input #button #name {
+        margin: 2%;
+        margin-left: -10%;
+        font-size: 2vh; }
+      body #input #button #pin {
+        font-size: 2vh; }
+  body #footer {
+    position: fixed;
+    width: 100%;
+    margin-left: auto;
+    margin-right: 50%;
+    top: 93%; }
+    body #footer #copyright {
+      font-size: 2vh;
+      text-align: center; }
+  body #name {
+    margin: 2%;
+    margin-left: 5%;
+    font-size: 2vh; }
+  body #pin {
+    font-size: 2vh; }
+  @media all and (min-width: 750px) and (min-device-width: 750px) {
+    body #header #subTitle {
+      text-align: center;
+      margin-top: 0%; }
+    body #infoBox {
+      background-color: #ffffff;
+      border: solid 5px red;
+      margin-top: 10%;
+      font-size: 3vh; }
+    body #input {
+      position: relative;
+      top: 1%;
+      padding: 1%; }
+      body #input #withdraw {
+        position: absolute;
+        top: -120%;
+        font-size: 2.5vh; }
+      body #input #deposit {
+        position: absolute;
+        top: -60%;
+        font-size: 2.5vh; }
+      body #input #transfer {
+        position: absolute;
+        top: -60%;
+        font-size: 2.5vh;
+        margin-left: -90%; }
+      body #input input[type=radio] {
+        width: 5vw;
+        height: 5vh; }
+      body #input #cancel {
+        position: absolute;
+        top: -120%;
+        font-size: 2.5vh;
+        margin-left: -90%; }
+      body #input #button2 {
+        margin-left: 35%;
+        margin-right: 25%;
+        font-size: 4vh; }
+      body #input #button {
+        margin-left: 35%;
+        margin-right: 25%;
+        font-size: 4vh; }
+        body #input #button #name {
+          margin: 2%;
+          margin-left: 5%;
+          font-size: 2vh; }
+        body #input #button #pin {
+          font-size: 2vh; } }
+@media all and (min-width: 750px) and (min-device-width: 750px) and (min-width: 1024px) and (min-device-width: 1024px) {
+  body #infoBox {
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-bottom: 0;
+    width: 40%; }
+  body #logo img {
+    width: 15%;
+    height: 15%; }
+  body #input {
+    position: relative;
+    top: 1%;
+    padding: 1%; }
+    body #input #withdraw {
+      position: absolute;
+      top: -120%;
+      font-size: 2.5vh; }
+    body #input #deposit {
+      position: absolute;
+      top: -60%;
+      font-size: 2.5vh; }
+    body #input input[type=radio] {
+      width: 3vw;
+      height: 3vh; }
+    body #input #transfer {
+      position: absolute;
+      top: -60%;
+      font-size: 2.5vh;
+      margin-left: -90%; }
+    body #input #cancel {
+      position: absolute;
+      top: -120%;
+      font-size: 2.5vh;
+      margin-left: -90%; }
+    body #input #button2 {
+      margin-left: 35%;
+      margin-right: 25%;
+      font-size: 4vh; }
+    body #input #button {
+      margin-left: 35%;
+      margin-right: 25%;
+      font-size: 4vh; }
+      body #input #button #name {
+        margin: 2%;
+        margin-left: 5%;
+        font-size: 2vh; }
+      body #input #button #pin {
+        font-size: 2vh; } }
+
+/*# sourceMappingURL=styles.css.map */
