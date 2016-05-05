@@ -76,6 +76,7 @@
 	    function main() {
 	        _classCallCheck(this, main);
 
+	        console.log('hello world!');
 	        this.reset();
 	        this.clickHandler();
 	        this.sideButtons();
@@ -96,7 +97,12 @@
 	        key: "clickHandler",
 	        value: function clickHandler() {
 	            document.getElementById("button").addEventListener("click", function () {
-	                new _FileIO2.default.pullInfo("public/data/infoBox.csv", main.setInfoBoxData);
+	                new _FileIO2.default.pullInfo("public/data/infoBox.csv", function (finalData) {
+	                    main.boxData = finalData;
+	                    console.log('file instantiated');
+	                    main.enterInfo();
+	                });
+	                console.log('start');
 	            });
 	        }
 	    }, {
@@ -117,10 +123,7 @@
 	        }
 	    }], [{
 	        key: "setInfoBoxData",
-	        value: function setInfoBoxData(finalData) {
-	            main.boxData = finalData;
-	            main.enterInfo();
-	        }
+	        value: function setInfoBoxData(finalData) {}
 	    }, {
 	        key: "enterInfo",
 	        value: function enterInfo() {
@@ -197,15 +200,16 @@
 	                    finalData = [];
 	                if (request.readyState === 4 && request.status === 200) {
 	                    data = request.responseText.split(/\n/);
-	                }
-	                for (var i = 0; i < data.length; i++) {
-	                    middleData = data[i].split(/,/);
-	                    finalData[i] = []; //makes it an MD array
-	                    for (var j = 0; j < COLUMNS; j++) {
-	                        finalData[i][j] = middleData[j];
+	                    for (var i = 0; i < data.length; i++) {
+	                        middleData = data[i].split(/,/);
+	                        finalData[i] = []; //makes it an MD array
+	                        for (var j = 0; j < COLUMNS; j++) {
+	                            finalData[i][j] = middleData[j];
+	                        }
 	                    }
+	                    console.log(finalData[0][1]);
+	                    callback(finalData);
 	                }
-	                callback(finalData);
 	            };
 	        }
 	    }]);
