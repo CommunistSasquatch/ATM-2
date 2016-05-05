@@ -16,7 +16,7 @@ export default class Transaction {
     static deposit (checking,savings) {
         Transaction.checking = checking;
         Transaction.savings = savings;
-        new FileIO.pullInfo("./data/infoBox.csv", Transaction.setDepositInfo);
+        new FileIO.pullInfo("public/data/infoBox.csv", Transaction.setDepositInfo);
     }
     static setDepositInfo(finalData){
         Transaction.boxData = finalData;
@@ -39,7 +39,7 @@ export default class Transaction {
     static withdraw(checking,savings){
         Transaction.checking = checking;
         Transaction.savings = savings;
-        new FileIO.pullInfo("./data/infoBox.csv", Transaction.setWithdrawInfo);
+        new FileIO.pullInfo("public/data/infoBox.csv", Transaction.setWithdrawInfo);
     }
     static setWithdrawInfo(finalData){
         Transaction.boxData = finalData;

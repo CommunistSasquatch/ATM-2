@@ -13,7 +13,7 @@ export default class TestUser {
     constructor(name,pin,callback) {
         TestUser.userName = name;
         TestUser.userPin = pin;
-        new FileIO.pullInfo("./data/users.csv", TestUser.testData);
+        new FileIO.pullInfo("public/data/users.csv", TestUser.testData);
         callback(TestUser.correctUser, TestUser.userName);
     }
 

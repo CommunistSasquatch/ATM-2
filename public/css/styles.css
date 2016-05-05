@@ -28,23 +28,36 @@ body {
   position: fixed;
   background-color: #ffedc8;
   border: solid 10px gold;
-  height: 98.3%;
-  width: 98%; }
-  body #header {
-    position: relative; }
-    body #header #title {
-      border-bottom: solid 10px black;
-      position: fixed;
-      margin: 1%;
-      left: 47%;
-      top: 2%;
-      font-size: 5vh; }
-    body #header #subTitle {
-      position: absolute;
-      margin: 1%;
-      left: 50%;
-      top: 70%;
-      font-size: 3vh; }
+  min-height: 99%;
+  min-width: 98%; }
+  body #logo {
+    max-height: 75%;
+    max-width: 75%; }
+    body #logo img {
+      max-height: 75%;
+      max-width: 75%; }
+  body #title {
+    border-bottom: solid 10px black;
+    position: fixed;
+    margin: 1%;
+    left: 47%;
+    top: 2%;
+    font-size: 5vh; }
+  body #subTitle {
+    position: absolute;
+    margin: 1%;
+    left: 52%;
+    top: 20%;
+    font-size: 3vh; }
+  body #footer {
+    position: fixed;
+    width: 100%;
+    margin-left: auto;
+    margin-right: 50%;
+    top: 93%; }
+    body #footer #copyright {
+      font-size: 2vh;
+      text-align: center; }
   body #depositFields {
     position: fixed;
     margin-top: -35%;
@@ -62,7 +75,7 @@ body {
     background-color: #ffffff;
     border: solid 5px red;
     margin: 10%;
-    margin-top: 30%;
+    margin-top: 20%;
     font-size: 3vh; }
   body #input {
     position: relative;
@@ -70,11 +83,13 @@ body {
     padding: 1%; }
     body #input #withdraw {
       position: absolute;
-      top: -120%;
+      top: -60%;
+      left: 90%;
       font-size: 2.5vh; }
     body #input #deposit {
       position: absolute;
-      top: -60%;
+      top: -120%;
+      left: 90%;
       font-size: 2.5vh; }
     body #input input[type=radio] {
       width: 5vw;
@@ -82,13 +97,13 @@ body {
     body #input #transfer {
       position: absolute;
       top: -60%;
-      font-size: 2.5vh;
-      margin-left: -90%; }
+      right: 90%;
+      font-size: 2.5vh; }
     body #input #cancel {
       position: absolute;
       top: -120%;
-      font-size: 2.5vh;
-      margin-left: -90%; }
+      right: 90%;
+      font-size: 2.5vh; }
     body #input #button2 {
       margin-left: 35%;
       margin-right: 25%;
@@ -97,122 +112,110 @@ body {
       margin-left: 35%;
       margin-right: 25%;
       font-size: 4vh; }
-      body #input #button #name {
-        margin: 2%;
-        margin-left: -10%;
-        font-size: 2vh; }
-      body #input #button #pin {
-        font-size: 2vh; }
-  body #footer {
+    body #input #name {
+      margin: 2%;
+      margin-left: 2%;
+      font-size: 2vh; }
+    body #input #pin {
+      font-size: 2vh; }
+
+@media all and (min-width: 500px) and (min-device-width: 500px) {
+  body {
     position: fixed;
-    width: 100%;
-    margin-left: auto;
-    margin-right: 50%;
-    top: 93%; }
-    body #footer #copyright {
-      font-size: 2vh;
-      text-align: center; }
-  body #name {
-    margin: 2%;
-    margin-left: 5%;
-    font-size: 2vh; }
-  body #pin {
-    font-size: 2vh; }
-  @media all and (min-width: 750px) and (min-device-width: 750px) {
-    body #header #subTitle {
-      text-align: center;
-      margin-top: 0%; }
+    background-color: #ffedc8;
+    border: solid 10px green;
+    min-height: 100%;
+    min-width: 98%; }
+    body #logo {
+      max-height: 60%;
+      max-width: 60%; }
+      body #logo img {
+        max-height: 60%;
+        max-width: 60%; }
+    body #title {
+      border-bottom: solid 10px black;
+      position: fixed;
+      margin: 1%;
+      left: 37%;
+      top: 2%;
+      font-size: 5vh; }
+    body #subTitle {
+      position: absolute;
+      margin: 1%;
+      left: 52%;
+      top: 15%;
+      font-size: 4vh; }
+    body #footer {
+      position: fixed;
+      width: 100%;
+      margin-left: auto;
+      margin-right: 50%;
+      top: 93%; }
+      body #footer #copyright {
+        font-size: 2vh;
+        text-align: center; }
+    body #depositFields {
+      position: fixed;
+      margin-top: -35%;
+      margin-left: 40%; }
+      body #depositFields #depositValue {
+        position: fixed;
+        margin-left: 10%;
+        font-size: 2vh; }
     body #infoBox {
+      padding-top: 3%;
+      padding-bottom: 3%;
+      padding-left: 10%;
+      padding-right: 10%;
+      text-align: center;
       background-color: #ffffff;
       border: solid 5px red;
+      margin: 10%;
+      margin-right: 25%;
+      margin-left: 25%;
       margin-top: 10%;
-      font-size: 3vh; }
+      font-size: 4vh; }
     body #input {
       position: relative;
       top: 1%;
       padding: 1%; }
       body #input #withdraw {
         position: absolute;
-        top: -120%;
+        top: -60%;
+        left: 90%;
         font-size: 2.5vh; }
       body #input #deposit {
         position: absolute;
-        top: -60%;
+        top: -120%;
+        left: 90%;
         font-size: 2.5vh; }
-      body #input #transfer {
-        position: absolute;
-        top: -60%;
-        font-size: 2.5vh;
-        margin-left: -90%; }
       body #input input[type=radio] {
         width: 5vw;
         height: 5vh; }
+      body #input #transfer {
+        position: absolute;
+        top: -110%;
+        right: 80%;
+        font-size: 4vh; }
       body #input #cancel {
         position: absolute;
-        top: -120%;
-        font-size: 2.5vh;
-        margin-left: -90%; }
+        top: -220%;
+        right: 80%;
+        font-size: 4vh; }
       body #input #button2 {
-        margin-left: 35%;
+        margin-left: 25%;
         margin-right: 25%;
         font-size: 4vh; }
       body #input #button {
-        margin-left: 35%;
-        margin-right: 25%;
+        position: fixed;
+        margin-left: 40%;
+        top: 70%;
         font-size: 4vh; }
-        body #input #button #name {
-          margin: 2%;
-          margin-left: 5%;
-          font-size: 2vh; }
-        body #input #button #pin {
-          font-size: 2vh; } }
-@media all and (min-width: 750px) and (min-device-width: 750px) and (min-width: 1024px) and (min-device-width: 1024px) {
-  body #infoBox {
-    margin-top: 10%;
-    margin-left: 20%;
-    margin-bottom: 0;
-    width: 40%; }
-  body #logo img {
-    width: 15%;
-    height: 15%; }
-  body #input {
-    position: relative;
-    top: 1%;
-    padding: 1%; }
-    body #input #withdraw {
-      position: absolute;
-      top: -120%;
-      font-size: 2.5vh; }
-    body #input #deposit {
-      position: absolute;
-      top: -60%;
-      font-size: 2.5vh; }
-    body #input input[type=radio] {
-      width: 3vw;
-      height: 3vh; }
-    body #input #transfer {
-      position: absolute;
-      top: -60%;
-      font-size: 2.5vh;
-      margin-left: -90%; }
-    body #input #cancel {
-      position: absolute;
-      top: -120%;
-      font-size: 2.5vh;
-      margin-left: -90%; }
-    body #input #button2 {
-      margin-left: 35%;
-      margin-right: 25%;
-      font-size: 4vh; }
-    body #input #button {
-      margin-left: 35%;
-      margin-right: 25%;
-      font-size: 4vh; }
-      body #input #button #name {
+      body #input #name {
         margin: 2%;
-        margin-left: 5%;
+        margin-left: 2%;
         font-size: 2vh; }
-      body #input #button #pin {
+      body #input #pin {
         font-size: 2vh; } }
 
 /*# sourceMappingURL=styles.css.map */

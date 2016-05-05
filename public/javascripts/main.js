@@ -29,7 +29,7 @@ class main {
     }
     clickHandler(){
         document.getElementById("button").addEventListener("click", function () {
-            new FileIO.pullInfo("./data/infoBox.csv", main.setInfoBoxData);
+            new FileIO.pullInfo("public/data/infoBox.csv", main.setInfoBoxData);
         });
     }
 
