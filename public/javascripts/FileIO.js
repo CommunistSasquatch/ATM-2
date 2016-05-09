@@ -27,7 +27,7 @@ export default class FileIO {
                 for (let i = 0; i < data.length; i++) {
                     middleData = data[i].split(/,/);
                     finalData[i] = []; //makes it an MD array
-                    for (let j = 0; j < COLUMNS; j++) {
+                    for (let j = 0; j < middleData.length; j++) {
                         finalData[i][j] = middleData[j];
                     }
                 }

@@ -16,7 +16,9 @@ export default class Transaction {
     static deposit (checking,savings) {
         Transaction.checking = checking;
         Transaction.savings = savings;
-        new FileIO.pullInfo("public/data/infoBox.csv", Transaction.setDepositInfo);
+        new FileIO.pullInfo("/public/data/users.csv", function (finalData) {
+            Transaction.setDepositInfo(finalData);
+        });
     }
     static setDepositInfo(finalData){
         Transaction.boxData = finalData;

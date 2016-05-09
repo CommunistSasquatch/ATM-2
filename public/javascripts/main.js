@@ -13,7 +13,7 @@ import Transaction from "./Transaction.js";
 
 class main {
     constructor() {
-        console.log('hello world!');
+        console.log('hello world!!');
         this.reset();
         this.clickHandler();
         this.sideButtons();
@@ -30,7 +30,7 @@ class main {
     }
     clickHandler(){
         document.getElementById("button").addEventListener("click", function () {
-            new FileIO.pullInfo("public/data/infoBox.csv", function(finalData) {
+            FileIO.pullInfo('/public/data/infoBox.csv', function(finalData) {
                 main.boxData = finalData;
                 console.log('file instantiated');
                 main.enterInfo();

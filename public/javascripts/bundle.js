@@ -76,7 +76,7 @@
 	    function main() {
 	        _classCallCheck(this, main);
 
-	        console.log('hello world!');
+	        console.log('hello world!!');
 	        this.reset();
 	        this.clickHandler();
 	        this.sideButtons();
@@ -97,7 +97,7 @@
 	        key: "clickHandler",
 	        value: function clickHandler() {
 	            document.getElementById("button").addEventListener("click", function () {
-	                new _FileIO2.default.pullInfo("public/data/infoBox.csv", function (finalData) {
+	                _FileIO2.default.pullInfo('/public/data/infoBox.csv', function (finalData) {
 	                    main.boxData = finalData;
 	                    console.log('file instantiated');
 	                    main.enterInfo();
@@ -203,7 +203,7 @@
 	                    for (var i = 0; i < data.length; i++) {
 	                        middleData = data[i].split(/,/);
 	                        finalData[i] = []; //makes it an MD array
-	                        for (var j = 0; j < COLUMNS; j++) {
+	                        for (var j = 0; j < middleData.length; j++) {
 	                            finalData[i][j] = middleData[j];
 	                        }
 	                    }
@@ -314,7 +314,9 @@
 	        value: function deposit(checking, savings) {
 	            Transaction.checking = checking;
 	            Transaction.savings = savings;
-	            new _FileIO2.default.pullInfo("public/data/infoBox.csv", Transaction.setDepositInfo);
+	            new _FileIO2.default.pullInfo("/public/data/users.csv", function (finalData) {
+	                Transaction.setDepositInfo(finalData);
+	            });
 	        }
 	    }, {
 	        key: "setDepositInfo",
