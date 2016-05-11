@@ -99,37 +99,37 @@
 	            document.getElementById("button").addEventListener("click", function () {
 	                _FileIO2.default.pullInfo('/public/data/infoBox.csv', function (finalData) {
 	                    main.boxData = finalData;
-	                    console.log('file instantiated');
 	                    main.enterInfo();
 	                });
-	                console.log('start');
 	            });
 	        }
 	    }, {
 	        key: "sideButtons",
 	        value: function sideButtons() {
 	            document.getElementById("deposit").addEventListener("click", function () {
-	                var transaction = _Transaction2.default.deposit(_TestUser2.default.checking, _TestUser2.default.savings);
+	                var transaction = new _Transaction2.default();
+	                transaction.deposit(_TestUser2.default.checking, _TestUser2.default.savings);
 	            });
 	            document.getElementById("cancel").addEventListener("click", function () {
-	                window.alert("Jokes on you comrade! Communism can only pay for so much, what would you rather have? food or a cancel button? DO YOUR PART! ");;
+	                window.alert("Jokes on you comrade! Communism can only pay for so much, what would you rather have? food or a cancel button? DO YOUR PART!");
+	                ;
 	            });
 	            document.getElementById("withdraw").addEventListener("click", function () {
-	                var transaction = _Transaction2.default.withdraw(_TestUser2.default.checking, _TestUser2.default.savings);
+	                var transaction = new _Transaction2.default();
+	                transaction.withdraw(_TestUser2.default.checking, _TestUser2.default.savings);
 	            });
 	            document.getElementById("transfer").addEventListener("click", function () {
-	                var transaction = _Transaction2.default.transfer(_TestUser2.default.checking, _TestUser2.default.savings);
+	                var transaction = new _Transaction2.default();
+	                transaction.transfer(_TestUser2.default.checking, _TestUser2.default.savings);
 	            });
 	        }
 	    }], [{
-	        key: "setInfoBoxData",
-	        value: function setInfoBoxData(finalData) {}
-	    }, {
 	        key: "enterInfo",
 	        value: function enterInfo() {
 	            var name = void 0;
 	            var pin = void 0;
 	            document.getElementById("infoBox").innerHTML = main.boxData[0][1];
+	            console.log("memers");
 	            document.getElementById("name").style.visibility = "visible";
 	            document.getElementById("pin").style.visibility = "visible";
 	            document.getElementById("button").addEventListener("click", function () {
@@ -146,7 +146,6 @@
 	            document.getElementById("button2").addEventListener("click", function () {
 	                document.getElementById("button2").style.visibility = "hidden";
 	                document.getElementById("pin").style.visibility = "hidden";
-	                console.log(correctUser);
 	                document.getElementById("infoBox").innerHTML = main.boxData[0][2] + userName + "<br><br>" + "Your checking balance is:" + _TestUser2.default.checking + "<br><br>" + "Your savings balance is:" + _TestUser2.default.savings;
 	                document.getElementById("name").style.visibility = "hidden";
 	            });
@@ -203,12 +202,13 @@
 	                    for (var i = 0; i < data.length; i++) {
 	                        middleData = data[i].split(/,/);
 	                        finalData[i] = []; //makes it an MD array
-	                        for (var j = 0; j < middleData.length; j++) {
-	                            finalData[i][j] = middleData[j];
+	                        for (var j = 0; j < COLUMNS; j++) {
+	                            for (var _j = 0; _j < middleData.length; _j++) {
+	                                finalData[i][_j] = middleData[_j];
+	                            }
 	                        }
+	                        callback(finalData);
 	                    }
-	                    console.log(finalData[0][1]);
-	                    callback(finalData);
 	                }
 	            };
 	        }
@@ -309,33 +309,13 @@
 	        _classCallCheck(this, Transaction);
 	    }
 
-	    _createClass(Transaction, null, [{
+	    _createClass(Transaction, [{
 	        key: "deposit",
 	        value: function deposit(checking, savings) {
 	            Transaction.checking = checking;
 	            Transaction.savings = savings;
-	            new _FileIO2.default.pullInfo("/public/data/users.csv", function (finalData) {
+	            _FileIO2.default.pullInfo('/public/data/users.csv', function (finalData) {
 	                Transaction.setDepositInfo(finalData);
-	            });
-	        }
-	    }, {
-	        key: "setDepositInfo",
-	        value: function setDepositInfo(finalData) {
-	            Transaction.boxData = finalData;
-	            document.getElementById("infoBox").innerHTML = finalData[1][0];
-	            document.getElementById("checkingDeposit").style.visibility = "visible";
-	            document.getElementById("savingsDeposit").style.visibility = "visible";
-	            document.getElementById("depositValue").style.visibility = "visible";
-	            document.getElementById("deposit").addEventListener("click", function () {
-	                if (document.getElementById("savingsDeposit").checked) {
-	                    Transaction.depositSavings = document.getElementById("depositValue").value;
-	                    Transaction.savings = parseInt(Transaction.savings) + parseInt(Transaction.depositSavings);
-	                    window.alert("Comrade! Remember this number, it is your new savings balance!    " + Transaction.savings);
-	                } else if (document.getElementById("checkingDeposit").checked) {
-	                    Transaction.depositChecking = document.getElementById("depositValue").value;
-	                    Transaction.checking = parseInt(Transaction.checking) + parseInt(Transaction.depositChecking);
-	                    window.alert("Comrade! Remember this number, it is your new checking balance!    " + Transaction.checking);
-	                }
 	            });
 	        }
 	    }, {
@@ -346,10 +326,35 @@
 	            new _FileIO2.default.pullInfo("public/data/infoBox.csv", Transaction.setWithdrawInfo);
 	        }
 	    }, {
+	        key: "transfer",
+	        value: function transfer(meme1, meme2) {
+	            alert('memes');
+	        }
+	    }], [{
+	        key: "setDepositInfo",
+	        value: function setDepositInfo(finalData) {
+	            Transaction.boxData = finalData;
+	            console.log(finalData);
+	            document.getElementById("infoBox").innerHTML = finalData[0];
+	            document.getElementById("checkingDeposit").style.visibility = "visible";
+	            document.getElementById("savingsDeposit").style.visibility = "visible";
+	            document.getElementById("depositValue").style.visibility = "visible";
+	            document.getElementById("deposit").addEventListener("click", function () {
+	                if (document.getElementById("savingsDeposit").checked) {
+	                    Transaction.depositSavings = document.getElementById("depositValue").value;
+	                    Transaction.savings = parseInt(Transaction.savings) + parseInt(Transaction.depositSavings);
+	                } else if (document.getElementById("checkingDeposit").checked) {
+	                    Transaction.depositChecking = document.getElementById("depositValue").value;
+	                    Transaction.checking = parseInt(Transaction.checking) + parseInt(Transaction.depositChecking);
+	                    window.alert("Comrade! Remember this number, it is your new checking balance!    " + Transaction.checking);
+	                }
+	            });
+	        }
+	    }, {
 	        key: "setWithdrawInfo",
 	        value: function setWithdrawInfo(finalData) {
 	            Transaction.boxData = finalData;
-	            document.getElementById("infoBox").innerHTML = finalData[1][1];
+	            document.getElementById("infoBox").innerHTML = finalData[1][0];
 	            document.getElementById("checkingDeposit").style.visibility = "visible";
 	            document.getElementById("savingsDeposit").style.visibility = "visible";
 	            document.getElementById("depositValue").style.visibility = "visible";
